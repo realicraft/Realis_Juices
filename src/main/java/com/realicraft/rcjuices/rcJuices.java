@@ -1,6 +1,7 @@
 package com.realicraft.rcjuices;
 
 import com.mojang.logging.LogUtils;
+import com.realicraft.rcjuices.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,8 @@ public class rcJuices {
 
     public rcJuices() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
